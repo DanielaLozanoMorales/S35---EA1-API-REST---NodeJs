@@ -1,7 +1,7 @@
 # API REST – Gestión de películas y series
 
 **Evidencia de aprendizaje:** API REST – Node.js  
-**Asignatura:** Ingeniería Web II  
+**Asignatura:** Proyecto integrado II  
 **Institución:** IU Digital de Antioquia  
 **Integrantes:** Daniela Lozano Morales, Yovany Anotonio Espinosa David, Jossy Esteban Paternina Julio
 
