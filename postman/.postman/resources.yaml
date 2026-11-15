@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: 840db770-15cd-48ca-9f3c-20848e35a66a
+
+localResources:
+  collections:
+    - ../API_Peliculas.postman_collection.json
+
+cloudResources:
+  collections:
+    ../postman/collections/API Películas y Series - IU Digital: 41937ab6-3d62-4b45-9cfa-3d1e8fdba482

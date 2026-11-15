@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{baseUrl}}/api/media"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "serial": "PEL-{{tag}}",
+      "titulo": "Película demostrativa",
+      "sinopsis": "Trama ficticia para pruebas de la API",
+      "url_pelicula": "https://example.com/videos/{{tag}}",
+      "portada": "https://example.com/portadas/{{tag}}.jpg",
+      "anio_estreno": 2024,
+      "genero_id": {{generoId}},
+      "director_id": {{directorId}},
+      "productora_id": {{productoraId}},
+      "tipo_id": {{tipoId}}
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("mediaId", pm.response.json().datos.id);
+    language: text/javascript
+order: 16000

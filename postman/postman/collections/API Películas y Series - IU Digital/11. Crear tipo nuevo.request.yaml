@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/api/tipos"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Documental {{tag}}",
+      "descripcion": "Producciones documentales"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("nuevoTipoId", pm.response.json().datos.id);
+    language: text/javascript
+order: 11000

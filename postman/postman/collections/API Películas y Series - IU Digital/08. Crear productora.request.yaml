@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productoras"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Productora prueba {{tag}}",
+      "estado": "Activo",
+      "slogan": "Cine para aprender",
+      "descripcion": "Prueba del API"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("productoraId", pm.response.json().datos.id);
+    language: text/javascript
+order: 8000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/api/generos"
+method: GET
+scripts:
+  - type: beforeRequest
+    code: pm.collectionVariables.set("tag", String(Date.now()));
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", function () { pm.response.to.have.status(200); });
+      pm.test("Existen 5 géneros iniciales", () => pm.expect(pm.response.json().total).to.be.at.least(5));
+      pm.collectionVariables.set("generoId", pm.response.json().datos.find(x => x.nombre === "Acción").id);
+    language: text/javascript
+order: 1000

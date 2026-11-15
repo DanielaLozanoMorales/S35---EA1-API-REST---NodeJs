@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/api/media/{{mediaId}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "serial": "PEL-{{tag}}",
+      "titulo": "Película actualizada",
+      "sinopsis": "Trama ficticia para pruebas de la API",
+      "url_pelicula": "https://example.com/videos/{{tag}}",
+      "portada": "https://example.com/portadas/{{tag}}.jpg",
+      "anio_estreno": 2024,
+      "genero_id": {{generoId}},
+      "director_id": {{directorId}},
+      "productora_id": {{productoraId}},
+      "tipo_id": {{tipoId}}
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 200", function () { pm.response.to.have.status(200); });
+    language: text/javascript
+order: 19000

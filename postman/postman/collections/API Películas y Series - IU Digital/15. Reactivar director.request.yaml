@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/api/directores/{{directorId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "estado": "Activo"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 200", function () { pm.response.to.have.status(200); });
+    language: text/javascript
+order: 15000

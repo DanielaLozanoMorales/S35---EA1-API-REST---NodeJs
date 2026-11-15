@@ -1,0 +1,9 @@
+$kind: collection
+description: Colección de verificación de los cinco módulos. Ejecutar en orden. Incluye casos válidos, estado Inactivo y restricción de borrado. Datos example.com demostrativos.
+variables:
+  baseUrl: http://localhost:3000
+  tag: prueba
+  generoId: ""
+  nuevoGeneroId: ""
+  directorId: ""
+  productoraId: ""
