@@ -1,0 +1,10 @@
+:root { --tinta: #1d2733; --fondo: #f4f5f7; --acento: #b4472f; }
+body { background: var(--fondo); color: var(--tinta); font-family: Georgia, "Times New Roman", serif; }
+h1, h2, h3, .navbar-brand, .btn, label, th { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.barra { background: var(--tinta); }
+.barra .nav-link { color: #c9d1db; }
+.barra .nav-link.activo { color: #fff; border-bottom: 2px solid var(--acento); }
+.btn-acento { background: var(--acento); color: #fff; border: 0; }
+.btn-acento:hover { background: #983a25; color: #fff; }
+.portada { width: 48px; height: 68px; object-fit: cover; border-radius: 3px; background: #dde1e6; }
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
