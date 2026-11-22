@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sistema académico de gestión de películas y series">
+  <title>CineGestor | Películas y series</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">▶</span><div><strong>CineGestor</strong><small>Proyecto Integrado II · IU Digital</small></div></div>
+    <div class="cloud"><span class="status-dot" id="status-dot"></span><span id="api-status">Conectando con API…</span></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <span class="menu-title">ADMINISTRACIÓN</span>
+      <nav id="tabs" aria-label="Secciones de la aplicación">
+        <button class="nav-button active" type="button" data-resource="media">▣ &nbsp; Películas y series</button>
+        <button class="nav-button" type="button" data-resource="generos">◇ &nbsp; Géneros</button>
+        <button class="nav-button" type="button" data-resource="directores">◎ &nbsp; Directores</button>
+        <button class="nav-button" type="button" data-resource="productoras">▤ &nbsp; Productoras</button>
+        <button class="nav-button" type="button" data-resource="tipos">▥ &nbsp; Tipos</button>
+      </nav>
+      <div class="sidebar-bottom">Gestión de catálogo audiovisual<br><span>Backend Node.js + SQLite</span></div>
+    </aside>
+    <main class="main">
+      <div class="heading"><div><p class="eyebrow">PANEL DE CONTROL</p><h1 id="section-title">Películas y series</h1><p id="section-description">Administra el catálogo audiovisual en un solo lugar.</p></div><button type="button" id="new-record" class="primary">＋ Nuevo registro</button></div>
+      <section class="stats" aria-label="Resumen"><div class="stat"><span>Registros en la sección</span><strong id="count-current">—</strong></div><div class="stat"><span>Géneros disponibles</span><strong id="count-genres">—</strong></div><div class="stat"><span>Tipos disponibles</span><strong id="count-types">—</strong></div></section>
+      <section class="workspace" aria-label="Registros"><div class="workspace-top"><div><h2 id="table-heading">Catálogo de películas y series</h2><p>Consulta, crea, edita y elimina registros.</p></div><label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Buscar en la sección…" autocomplete="off" aria-label="Buscar registros"></label></div><div class="table-scroll"><table><thead id="table-head"></thead><tbody id="table-body"><tr><td>Cargando datos…</td></tr></tbody></table></div><p class="footnote" id="results-label"></p></section>
+      <section id="editor" class="workspace editor hidden" aria-labelledby="editor-title"><div class="workspace-top"><div><h2 id="editor-title">Nuevo registro</h2><p>Los campos con * son obligatorios.</p></div><button class="outline" type="button" id="cancel-editor">Cancelar</button></div><form id="record-form"><div class="form-grid" id="form-fields"></div><div class="form-actions"><button class="primary" type="submit" id="save-record">Guardar registro</button></div></form></section>
+      <div id="notification" class="notification hidden" role="status" aria-live="polite"></div>
+      <footer>Proyecto académico · IU Digital de Antioquia · API REST / Frontend</footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,15 +1,14 @@
 {
-  "name": "api-rest-peliculas-iu-digital",
-  "version": "1.0.0",
-  "description": "API REST para películas y series con Node.js nativo y SQLite, sin dependencias externas",
+  "name": "gestion-peliculas-iu-digital-ea3",
+  "version": "3.0.0",
   "private": true,
+  "description": "Backend API REST y frontend para gestión de películas y series - evidencia de aprendizaje 3",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "test": "node --test tests/*.test.js"
   },
-  "engines": {
-    "node": ">=22.13.0"
-  }
+  "engines": { "node": ">=22.13.0 <25" },
+  "license": "UNLICENSED"
 }

@@ -1,0 +1,22 @@
+EN LA CARPETA DE LA APLICACION Y REVISANDO ANTES LOS CAMBIOS:
+
+Opción A (nuevo repositorio vacío en GitHub):
+  git init
+  git add .
+  git commit -m "EA3: integración frontend y backend para despliegue en Render"
+  git branch -M main
+  git remote add origin https://github.com/TU_USUARIO/TU_NUEVO_REPO.git
+  git push -u origin main
+
+Opción B (conservar el repositorio existente):
+  git clone https://github.com/DanielaLozanoMorales/S35---EA1-API-REST---NodeJs.git
+  cd S35---EA1-API-REST---NodeJs
+  # Hacer copia de respaldo y REVISAR/INTEGRAR las diferencias entre las dos versiones.
+  # Copiar manualmente los archivos nuevos o modificados de la carpeta "aplicacion".
+  git status
+  npm test
+  git add .
+  git commit -m "EA3: frontend y configuración de despliegue"
+  git push origin main
+
+No reemplazar ciegamente el repositorio previo, especialmente si allí hay código de la EA2.
